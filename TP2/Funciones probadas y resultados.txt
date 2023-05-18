@@ -1,0 +1,14 @@
+crecimientoPorAnio 5
+14
+
+crecimientoEntre 1 4
+76
+
+alturasEnUnAnio 5 [120, 100, 115]
+[134,114,129]
+
+alturaEnEdades 100 6 [6, 7, 8]
+[100,122,130]
+
+alturasPara [(5, 120), (1, 50), (8, 160)] [3, 12, 2]
+[164,183,178]

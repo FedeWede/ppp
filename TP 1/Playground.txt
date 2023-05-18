@@ -1,0 +1,84 @@
+|unaObra funcion1 funcion2 entradaPlatea1 entradaPlatea2 entradaPlatea3 entradaPlatea4 entradaVip1 entradaVip2 palco1 palco2 unDirector unaFecha venta1 venta2 venta3 venta4 date1 date2 importeTotal lista|
+
+unDirector:= Direccion new initialize.
+unDirector nombre: 'Guillermo'; apellido: 'Gonzalez'; porcentajeVentas: 15.6.
+
+unaObra:= ObraTeatro new initialize.
+
+unaObra titulo: 'Hamlet'; direccion: unDirector.
+
+
+funcion1:= Funcion new initialize.
+funcion2:= Funcion new initialize.
+
+unaFecha:= Date newDay: 10 month: 7 year: 2022.
+funcion1 codigo: 1000; fecha: Date today.
+funcion2 codigo: 2000; fecha: unaFecha.
+
+unaObra addFuncion: funcion1.
+unaObra addFuncion: funcion2.
+
+
+
+entradaPlatea1:= EntradaPlatea new initialize.
+entradaPlatea2:= EntradaPlatea new initialize.
+entradaPlatea3:= EntradaPlatea new initialize.
+entradaPlatea4:= EntradaPlatea new initialize.
+
+entradaPlatea1 importeBasico: 500; nroButaca: 1.
+entradaPlatea2 importeBasico: 500; nroButaca: 3.
+entradaPlatea3 importeBasico: 500; nroButaca: 5.
+entradaPlatea4 importeBasico: 500; nroButaca: 7.
+
+
+
+palco1:= Palco new initialize.
+palco2:= Palco new initialize.
+
+palco1 codigo: 'A'; cantidadAsientos: 5.
+palco2 codigo: 'G'; cantidadAsientos: 4.
+
+
+entradaVip1:= EntradaVip new initialize.
+entradaVip2:= EntradaVip new initialize.
+
+
+entradaVip1 importeBasico: 1000; servicioCatering: true; palco: palco1.
+entradaVip2 importeBasico: 1000; servicioCatering: false; palco: palco2.
+
+unaObra habilitarEntrada: entradaPlatea1 aFuncion: 1000.
+unaObra habilitarEntrada: entradaPlatea2 aFuncion: 2000.
+unaObra habilitarEntrada: entradaVip1 aFuncion: 1000.
+unaObra habilitarEntrada: entradaVip2 aFuncion: 2000.
+unaObra habilitarEntrada: entradaPlatea3 aFuncion: 1000.
+unaObra habilitarEntrada: entradaPlatea4 aFuncion: 1000.
+
+
+Transcript show: unaObra asString.
+Transcript show: String cr.
+Transcript show: funcion1 asString.
+Transcript show: String cr.
+Transcript show: funcion2 asString.
+
+venta1:= unaObra venderEntradaPlatea: 1000.
+venta2:= unaObra venderEntradaVip: 1000 aceptoServicioCatering: false.
+Transcript show: venta1.
+Transcript show: venta2.
+
+venta3:= unaObra venderEntradaPlatea: 2000.
+venta4:= unaObra venderEntradaVip: 2000 aceptoServicioCatering: true.
+Transcript show: venta3.
+Transcript show: venta4.
+
+
+
+date1:= Date newDay: 1 month: 5 year: 2022.
+date2:= Date newDay: 10 month: 6 year: 2022.
+importeTotal:= unaObra importeTotalVentasFechaDesde: date1 fechaHasta: date2.
+Transcript show: importeTotal.
+
+lista:= unaObra listadoOrdenadoNroButacasDisponiblesParaFuncion: 1000.
+Transcript show: lista.
+
+
+
